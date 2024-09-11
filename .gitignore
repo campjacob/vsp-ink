@@ -6,3 +6,5 @@ _site/
 .bundle/
 vendor/
 .obsidian/
+*.sublime-project
+*.sublime-workspace
