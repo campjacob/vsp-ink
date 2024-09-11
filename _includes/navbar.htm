@@ -1,0 +1,63 @@
+<!-- Presentation Pages -->
+
+{% if page.layout contains "presentation" %}
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><span class="h2 orange">| </span><span class="h2 fw-bolder">Jacob </span><span class="h2 text-body-secondary">Campbell, </span><span class="h2 align-bottom orange">...</span></a>
+    <a class="navbar-brand text-uppercase fw-bold" href="{{ site.baseurl }}/presentations/">Presentations</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="container-fluid"> </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{ site.baseurl }}/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{ site.baseurl }}/blog">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{ site.baseurl }}/resources">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{ site.baseurl }}/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{ site.baseurl }}/cv">CV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link icon-link" aria-current="page" href="#">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Search
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<hr class="shadow opacity-50">
+
+<div class="accordion accordion-flush container-lg" id="accordionFlushPresentationPages">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed fw-lighter" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        <i class="fa-solid fa-person-chalkboard"></i>
+        &nbsp; Presentation's Pages
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushPresentationPages">
+      <div class="container-lg">
+      <ul class="list-group list-group-horizontal small fw-lighter text-decoration-none text-center">
+        <li class="list-group-item{% if page.url == '/presentations/' %} active{% endif %}"><a href="/presentations/">Presentation Home</a></li>
+        <li class="list-group-item{% if page.url == '/presentations/bio/' %} active{% endif %}"><a href="/presentations/bio/">About Presentations</a></li>
+        <li class="list-group-item{% if page.url == '/presentations/all-presentations/' %} active{% endif %}"><a href="/presentations/all-presentations/">All Presentations</a></li>
+        <li class="list-group-item{% if page.url == '/presentations/presentation-tags/' %} active{% endif %}"><a href="/presentations/presentation-tags/">Presentations by Tags</a></li>
+        <li class="list-group-item"><a href="#">Presentations with Videos</a></li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</div>
+
+{% endif %}

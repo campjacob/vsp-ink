@@ -1,0 +1,91 @@
+---
+layout: default
+---
+<div class="container">
+<h1 style="font-weight: 900;" class="text-center">{{ page.title }}</h1>
+
+{{ content }}
+
+{% if page.monday %}
+  {% assign monday_location = page.monday %}
+{% else %}
+  {% assign monday_location = "🫥 by appt only" %}
+{% endif %}
+
+{% if page.tuesday %}
+  {% assign tuesday_location = page.tuesday %}
+{% else %}
+  {% assign tuesday_location = "🫥 by appt only" %}
+{% endif %}
+
+{% if page.wednesday %}
+  {% assign wednesday_location = page.wednesday %}
+{% else %}
+  {% assign wednesday_location = "🫥 by appt only" %}
+{% endif %}
+
+{% if page.thursday %}
+  {% assign thursday_location = page.thursday %}
+{% else %}
+  {% assign thursday_location = "🫥 by appt only" %}
+{% endif %}
+
+{% if page.friday %}
+  {% assign friday_location = page.friday %}
+{% else %}
+  {% assign friday_location = "🫥 by appt only" %}
+{% endif %}
+
+{% if page.saturday %}
+  {% assign saturday_location = page.saturday %}
+{% else %}
+  {% assign saturday_location = "🫥 by appt only" %}
+{% endif %}
+
+{% if page.sunday %}
+  {% assign sunday_location = page.sunday %}
+{% else %}
+  {% assign sunday_location = "🫥 by appt only" %}
+{% endif %}
+
+
+The following is my general plan for this week.
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Monday</td>
+      <td>{{ monday_location }}</td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td>{{ tuesday_location }}</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td>{{ wednesday_location }}</td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td>{{ thursday_location }}</td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td>{{ friday_location }}</td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td>{{ saturday_location }}</td>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td>{{ sunday_location }}</td>
+    </tr>
+  </tbody>
+</table>

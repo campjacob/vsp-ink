@@ -1,0 +1,62 @@
+---
+---
+
+// Import Bootstrap functions first
+@import "bootstrap/functions";
+
+// SCSS Variable Overides
+
+$primary: #fd7e14; // Regular orange color
+
+
+// Import Bootstrap variables to apply the custom variables
+@import "bootstrap/variables";
+
+// Import Bootstrap to apply the custom variables throughout
+@import 'bootstrap/bootstrap';
+
+// Import FontAwesome icons
+@import 'fontawesome/brands';
+@import 'fontawesome/fontawesome';
+@import 'fontawesome/regular';
+@import 'fontawesome/solid';
+
+
+// Custom styles
+.orange { 
+  color: $orange; 
+}
+
+
+// Customize the accordion active background color
+.accordion-button:not(.collapsed) {
+  --bs-accordion-active-bg: #fd7e14; // Orange for light mode
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .accordion-button:not(.collapsed) {
+    --bs-accordion-active-bg: #ffcc99; // Light orange for dark mode
+    color: #000; // Ensure the text is readable
+  }
+  .list-group-item.active {
+    --bs-list-group-active-bg: #ffcc99;
+    color: #000;
+}
+  a {
+    --bs-link-color-rgb: #000;
+    --bs-link-opacity: #adb5bd;
+}
+}
+
+@media (prefers-color-scheme: light) {
+  .accordion-button:not(.collapsed) {
+    --bs-accordion-active-bg: #fd7e14; 
+    color: #fff; // Ensure the text is readable
+  }
+  .list-group-item.active {
+  --bs-list-group-active-bg: #fd7e14;
+  --bs-link-color-rgb: #fff;
+  --bs-link-opacity: #adb5bd;
+}
+}
