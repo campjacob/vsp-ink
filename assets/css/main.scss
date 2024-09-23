@@ -2,12 +2,26 @@
 ---
 
 // I need to fix this. Since going to the CDN the color doesn't work.
-//
+
+
+
+//:root {
+//  --bs-primary: #fd7e14; /* Main Orange */
+//  --bs-primary-rgb: 253, 126, 20; /* RGB equivalent of #fd7e14 */
+//  --bs-primary-hover: #e66900; /* Darker orange for hover */
+//  --bs-primary-focus: #cc5800; /* Even darker orange for focus */
+//  --bs-primary-border: #fd7e14; /* Border color */
+//}
+
+// :root {
+//   --bs-link-color-rgb: 253,126,20;
+//   --bs-primary-rgb: 253,126,20;
+//   }
 //:root {
 //  --bs-primary: #fd7e14; /* Custom primary color */
 //  --bs-link-color: #fd7e14; /* Custom link color */
 //}
-//
+
 
 // Import FontAwesome icons
 
