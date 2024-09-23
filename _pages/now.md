@@ -20,25 +20,27 @@ permalink: /now
     document.getElementById('current-date').innerText = getFormattedDate();
 </script>
 
-{% assign day_code = site.time | date: "%Y-%m-%d" %}
+{% assign current_date = "now" | date: "%Y-%m-%d" %}
 {% assign day_found = false %}
 
 {% for day in site.daily %}
-{% if day.date == day_code %}
-{% assign day_found = true %}
+  {% assign day_date_normalized = day.date | date: "%Y-%m-%d" | strip %}
+ 
+  {% if day_date_normalized == current_date %}
+    {% assign day_found = true %}
   <div class="alert alert-success" role="alert">
     <strong>Jacob's Location:</strong> {{ day.location }}
   </div>
-{{ day.content }}
-{% break %}
-{% endif %}
+  {{ day.content }}
+  {% endif %}
 {% endfor %}
 
-{% unless day_found %}
+{% if day_found == false %}
   <div class="alert alert-success" role="alert">
     Jacob has not updated his daily schedule yet. See his weekly schedule below or contact him.
   </div>
-{% endunless %}
+{% endif %}
+
 
 {% for week in site.weekly %}
 {% assign week_year = site.time | date: "%Y" %}
