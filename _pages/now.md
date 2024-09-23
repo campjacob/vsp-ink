@@ -24,7 +24,7 @@ permalink: /now
 {% assign day_found = false %}
 
 {% for day in site.daily %}
-{% if day.slug == day_code %}
+{% if day.date == day_code %}
 {% assign day_found = true %}
   <div class="alert alert-success" role="alert">
     <strong>Jacob's Location:</strong> {{ day.location }}
