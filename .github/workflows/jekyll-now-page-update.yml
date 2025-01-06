@@ -1,7 +1,8 @@
-name: One-Time Jekyll Build
+name: Update /now Page
 
 on:
-  workflow_dispatch: # Allows you to manually trigger the workflow
+  schedule:
+    - cron: '0 12 * * *' # 4:00 AM PST (Standard Time)
 
 jobs:
   build:
