@@ -1,1 +1,1 @@
-This file should get automatically updated by IFTTT and a webhook.
+Trigger Github Pages Rebuild
