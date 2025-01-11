@@ -7154,7 +7154,7 @@
 			"file": "_includes/head.htm",
 			"settings":
 			{
-				"buffer_size": 4591,
+				"buffer_size": 4615,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			},
@@ -7263,6 +7263,22 @@
 					null,
 					"AQAAAHcRAAAAAAAA7xEAAAAAAAAAAAAA",
 					"AQAAAAAAAAABAAAAdxEAAAAAAAB3EQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					7,
+					1,
+					"paste",
+					null,
+					"AQAAAHYRAAAAAAAAjxEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAdhEAAAAAAAB2EQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					9,
+					1,
+					"left_delete",
+					null,
+					"AQAAAI8RAAAAAAAAjxEAAAAAAAABAAAACg",
+					"AQAAAAAAAAABAAAAjxEAAAAAAACQEQAAAAAAAAAAAAAAAPC/"
 				]
 			]
 		}
@@ -7745,15 +7761,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4591,
+						"buffer_size": 4615,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4470,
-								4470
+								4615,
+								4615
 							]
 						],
 						"settings":
@@ -7840,7 +7856,7 @@
 		[
 			[
 				"",
-				"~/Files/presentations/presentations.sublime-workspace"
+				"~/Library/Mobile Documents/com~apple~CloudDocs/Sublime Text/campjacob.github.io.sublime-workspace.sublime-project"
 			]
 		],
 		"width": 380.0
