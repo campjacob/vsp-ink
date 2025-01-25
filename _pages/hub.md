@@ -40,7 +40,7 @@ title: Jacob Campbell
 	    </div>
 	  </div>
 		</div>
-		<p class="mt-5">Keeping my own home and place on the internet is important to me. <br />Some places include:</p>
+		<p class="mt-5">Keeping my own home and place on the internet is important to me. Some places include:</p>
 		<div class="vstack gap-3 col-md-5 mx-auto mt-4">
 			<a href="https://jacobrcampbell.com/" class="btn btn-warning">
 				<i class="fa-solid fa-house"></i> Main Website
