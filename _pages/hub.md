@@ -54,6 +54,9 @@ title: Jacob Campbell
 			<a href="https://vsp.ink/now" class="btn btn-outline-secondary">
 				<i class="fa-solid fa-calendar-day"></i> Now Page
 			</a>
+			<a href="https://media.vsp.ink/photos" class="btn btn-outline-secondary">
+				<i class="fa-solid fa-camera-retro"></i> Photos
+			</a>
 			<a href="https://jacobrcampbell.com/contact/" class="btn btn-outline-secondary">
 				<i class="fa-solid fa-message"></i> Contact Me
 			</a>
