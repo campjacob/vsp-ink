@@ -5,3 +5,4 @@
 🚘 Community Appts
 🌃🏫 CBC Campus
 🛩️ Traveling
+🚑 Medical 
