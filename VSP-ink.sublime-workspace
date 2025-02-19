@@ -35,96 +35,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "_daily/2025-02-18.md",
-			"settings":
-			{
-				"buffer_size": 1225,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					5,
-					1,
-					"insert",
-					{
-						"characters": "\n\n"
-					},
-					"AgAAAAgCAAAAAAAACQIAAAAAAAAAAAAACQIAAAAAAAAKAgAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAACAIAAAAAAAAIAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					7,
-					1,
-					"paste",
-					null,
-					"AQAAAAkCAAAAAAAAhQIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAACQIAAAAAAAAJAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					15,
-					1,
-					"left_delete",
-					null,
-					"AQAAAI4CAAAAAAAAjgIAAAAAAAAdAAAAIHRpdGxlPSJQaXhlbGZlZCBQb3N0IEVtYmVkIiA",
-					"AQAAAAAAAAABAAAAqwIAAAAAAACOAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					16,
-					1,
-					"insert",
-					{
-						"characters": " "
-					},
-					"AQAAAI4CAAAAAAAAjwIAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAjgIAAAAAAACOAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					29,
-					1,
-					"left_delete",
-					null,
-					"AQAAADgDAAAAAAAAOAMAAAAAAAAiAAAAIGFsbG93ZnVsbHNjcmVlbj0iYWxsb3dmdWxsc2NyZWVuIg",
-					"AQAAAAAAAAABAAAAWgMAAAAAAAA4AwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					39,
-					1,
-					"left_delete",
-					null,
-					"AQAAAPICAAAAAAAA8gIAAAAAAAA6AAAAY2xhc3M9InBpeGVsZmVkX19lbWJlZCIgc3R5bGU9Im1heC13aWR0aDogMTAwJTsgYm9yZGVyOiAwIg",
-					"AQAAAAAAAAABAAAALAMAAAAAAADyAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					40,
-					1,
-					"left_delete",
-					null,
-					"AQAAAPECAAAAAAAA8QIAAAAAAAABAAAAIA",
-					"AQAAAAAAAAABAAAA8gIAAAAAAADyAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					52,
-					1,
-					"paste",
-					null,
-					"AgAAAJQCAAAAAAAA8AIAAAAAAAAAAAAA8AIAAAAAAADwAgAAAAAAAFwAAABodHRwczovL21lZGlhLnZzcC5pbmsvcC9waG90b3MvNzk3MzQ2Mjc3MDcwNTgxOTAzL2VtYmVkP2NhcHRpb249dHJ1ZSZsaWtlcz1mYWxzZSZsYXlvdXQ9ZnVsbA",
-					"AQAAAAAAAAABAAAA8AIAAAAAAACUAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					66,
-					1,
-					"insert",
-					{
-						"characters": " "
-					},
-					"DAAAAJcEAAAAAAAAmAQAAAAAAAAAAAAAmAQAAAAAAACYBAAAAAAAAAMAAADigK9nBAAAAAAAAGgEAAAAAAAAAAAAAGgEAAAAAAAAaAQAAAAAAAADAAAA4oCv6AMAAAAAAADpAwAAAAAAAAAAAADpAwAAAAAAAOkDAAAAAAAAAwAAAOKAr58DAAAAAAAAoAMAAAAAAAAAAAAAoAMAAAAAAACgAwAAAAAAAAMAAADigK9nAwAAAAAAAGgDAAAAAAAAAAAAAGgDAAAAAAAAaAMAAAAAAAADAAAA4oCvJgMAAAAAAAAnAwAAAAAAAAAAAAAnAwAAAAAAACcDAAAAAAAAAwAAAOKArw",
-					"AQAAAAAAAAAGAAAAJwMAAAAAAAAmAwAAAAAAAAAAAAAAAPC/ZwMAAAAAAABoAwAAAAAAAAAAAAAAAPC/nwMAAAAAAACgAwAAAAAAAAAAAAAAAPC/6AMAAAAAAADpAwAAAAAAAAAAAAAAAPC/ZwQAAAAAAABoBAAAAAAAAAAAAAAAAPC/lwQAAAAAAACYBAAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -245,6 +155,7 @@
 	],
 	"file_history":
 	[
+		"/Users/jacob/Files/vsp-ink/_daily/2025-02-18.md",
 		"/Users/jacob/Files/vsp-ink/_pages/now.md",
 		"/Users/jacob/Files/vsp-ink/_pages/hub.md",
 		"/Users/jacob/Files/vsp-ink/_pages/hours.md",
@@ -371,8 +282,7 @@
 		"/Users/jacob/Files/coursework-organizer/SOWK 487/week-13-handout-handout-speed-hating-a-date-with-discrimination.md",
 		"/Users/jacob/Files/coursework-organizer/SOWK 460/Reading Quizes/w-12-a-02-Kapp-and-Anderson-2010-chapter-13.md",
 		"/Users/jacob/Files/coursework-organizer/SOWK 460/week-12-lecture-notes.md",
-		"/Users/jacob/Files/coursework-organizer/SOWK 322/week-12-lecture-notes.md",
-		"/Users/jacob/Files/coursework-organizer/SOWK 322/week-13-lecture-notes.md"
+		"/Users/jacob/Files/coursework-organizer/SOWK 322/week-12-lecture-notes.md"
 	],
 	"find":
 	{
@@ -422,36 +332,6 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "_daily/2025-02-18.md",
-					"selected": true,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1225,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								691,
-								709
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -522,7 +402,7 @@
 		[
 			[
 				"",
-				"~/Library/Mobile Documents/com~apple~CloudDocs/Sublime Text/campjacob.github.io.sublime-workspace.sublime-project"
+				"~/Files/coursework-organizer/coursework-organizer.sublime-project"
 			]
 		],
 		"width": 380.0
