@@ -35,6 +35,26 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "_includes/head.htm",
+			"settings":
+			{
+				"buffer_size": 4615,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					9,
+					1,
+					"paste",
+					null,
+					"AgAAAI8RAAAAAAAABxIAAAAAAAAAAAAABxIAAAAAAAAHEgAAAAAAAHgAAAA8c2NyaXB0IGRlZmVyIHNyYz0iaHR0cHM6Ly9hbmFseXRpY3MudnNwLmluay9zY3JpcHQuanMiIGRhdGEtd2Vic2l0ZS1pZD0iNDdkN2FlNDYtM2MyZC00OWRkLWI4NjktYTQ2ZjczZDA5NGJmIj48L3NjcmlwdD4",
+					"AQAAAAAAAAABAAAAjxEAAAAAAAAHEgAAAAAAAP///////+9/"
+				]
+			]
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -149,7 +169,7 @@
 	"expanded_folders":
 	[
 		"/Users/jacob/Files/vsp-ink",
-		"/Users/jacob/Files/vsp-ink/_daily",
+		"/Users/jacob/Files/vsp-ink/_includes",
 		"/Users/jacob/Files/vsp-ink/assets",
 		"/Users/jacob/Files/vsp-ink/assets/css"
 	],
@@ -332,6 +352,38 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "_includes/head.htm",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4615,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3528,
+								3528
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 524.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -402,7 +454,7 @@
 		[
 			[
 				"",
-				"~/Files/coursework-organizer/coursework-organizer.sublime-project"
+				"~/Library/Mobile Documents/com~apple~CloudDocs/Sublime Text/campjacob.github.io.sublime-workspace.sublime-project"
 			]
 		],
 		"width": 380.0
