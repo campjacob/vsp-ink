@@ -5,7 +5,7 @@ title: My General Office Hours
 ---
 # General Office Hours
 
-I created this website so that I could quickly and easily update my schedule and share it with anybody who might need to be in contact with me. I value being able to collaborate and work on problems in person. I go between several sites (e.g., Heritage at Toppenish/Kennewick campuses, Columbia Basin College Campus, and my home office). I adapt my location and schedule to meet the needs of a given week, so my schedule does vary depending on the needs for that week. The following is my general plan for locations:
+I created this website so that I could quickly and easily update my schedule and share it with anybody who might need to be in contact with me. I value collaborating and working on problems in person. I go between several sites (e.g., Heritage at Toppenish/Kennewick campuses, Columbia Basin College Campus, and my home office). I adapt my location and schedule to meet the needs of a given week, so my schedule does vary depending on the needs for that week. The following is my general plan for locations:
 
 - Tuesdays and Saturdays (when we have MSW classes) in Toppenish
 - Wednesdays and Thursdays in Kennewick
