@@ -6,3 +6,4 @@
 🌃🏫 CBC Campus
 🛩️ Traveling
 🚑 Medical 
+🏝️ Vacation
