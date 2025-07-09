@@ -40,6 +40,9 @@ collections:
   weekly:
     output: true
     permalink: /:collection/:name
+  embed:
+    output: true
+    permalink: /:collection/:name
 
 defaults:
   - scope:
@@ -52,6 +55,11 @@ defaults:
       type: weekly
     values:
       layout: "single-weekly"
+  - scope:
+      path: ""
+      type: embed
+    values:
+      layout: "embed"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
