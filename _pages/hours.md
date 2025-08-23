@@ -10,11 +10,14 @@ I created this website so that I could quickly and easily update my schedule and
 - Tuesdays and Saturdays (when we have MSW classes) in Toppenish
 - Wednesdays and Thursdays in Kennewick
 
-I schedule specific times for collaboration and student meetings every week, at 2 p.m. on Tuesdays and Wednesdays. When this time must be changed, I move it so there is always a scheduled time each week. During my scheduled office hours at each site, I'm open for people to come by in person or join Zoom (<https://heritage.zoom.us/my/dr.jacob>).
+I schedule specific times for collaboration and with students or other professionals every week with an opn office hour at my two main sites. These times are sometimes subject to change so make sure to check out my [NOW](/now) page for my schedule this week and today. Weekly drop-in sessions are available via [Zoom](https://heritage.zoom.us/my/dr.jacob) or in-person.
 
-You can check out my [NOW](/now) page for my schedule this week and today. To schedule a specific meeting time, feel free to email me (campbell_j@heritage.edu) or call/text me at (509) 392-1056.
+**Toppenish Campus**  
+_Office_: Simpkins Hall, Office 2124  
+_Drop-in_: Tuesday’s 10–11 AM  
 
-I attempt to maintain an open door policy, meaning days I'm on campus you can also come by my office and meet as needed. My offices are as follows:
+**Tri-Cities Regional Site**  
+_Office_: 2nd Floor Office 4209  
+_Drop-in_: Wednesday’s 2–3 PM  
 
-**Toppenish Campus**: Simpkins Hall in Office 2126  
-**Tri-Cities Campus in Kennewick**: Office 4209  
+Other times available by arrangement, to schedule a specific meeting time, feel free to email me (campbell_j@heritage.edu) or call/text me at (509) 392-1056.
