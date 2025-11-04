@@ -1,0 +1,66 @@
+---
+layout: default
+---
+<article>
+  <h1>{{ page.title }}</h1>
+  <p><small>{{ page.date | date: "%B %-d, %Y" }}{% if page.duration %} • {{ page.duration }}{% endif %}</small></p>
+
+  {% if page.audio_url %}
+    <audio controls src="{{ page.audio_url }}"></audio>
+  {% endif %}
+
+  {% if page.description %}
+    <p>{{ page.description }}</p>
+  {% endif %}
+
+  {{ content }}
+
+  {% assign series_path = '/' | append: page.series | append: '/' %}
+  {% assign series_title = site.pages | where: "permalink", series_path | first | default: page.series %}
+
+  <!-- Button to open modal -->
+  <div style="margin-top: 2rem;">
+    <button onclick="openModal()">📋 Show LMS Snippet</button>
+  </div>
+
+  <!-- Modal -->
+  <dialog id="snippetModal" style="max-width: 600px; width: 90%;">
+    <h3>Copy LMS Snippet</h3>
+    <p>You can copy the snippet below to include this episode in your course page:</p>
+    <textarea id="snippetText" readonly rows="6" style="width:100%; font-family: monospace;">
+You can listen to a podcast episode for this week's reading [{{ page.title }}]({{ page.url | absolute_url }}), or see the entire series [{{ series_title.title | default: 'Podcast Series' }}]({{ series_path | absolute_url }}).
+
+<audio controls src="{{ page.audio_url }}"></audio>
+    </textarea>
+    <div style="text-align: right; margin-top: 1rem;">
+      <button onclick="copySnippet()">Copy</button>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </dialog>
+
+  <script>
+    const modal = document.getElementById('snippetModal');
+
+    function openModal() {
+      modal.showModal();
+    }
+
+    function closeModal() {
+      modal.close();
+    }
+
+    function copySnippet() {
+      const textArea = document.getElementById('snippetText');
+      textArea.select();
+      navigator.clipboard.writeText(textArea.value).then(() => {
+        alert('✅ Snippet copied to clipboard!');
+        modal.close();
+      });
+    }
+  </script>
+
+  <p><a href="{{ series_path | relative_url }}">← Back to Podcast Series</a></p>
+  {% assign feed_url = '/' | append: page.series | append: '.xml' %}
+  <p><a href="{{ feed_url | relative_url }}">Subscribe via RSS</a></p>
+</article>
+

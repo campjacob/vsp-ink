@@ -1,0 +1,60 @@
+---
+layout: none
+permalink: /deep-dive-cooper-and-granucci-lesser-2022.xml
+series: deep-dive-cooper-and-granucci-lesser-2022
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <!-- Basic metadata -->
+    <title>{{ site.title }} – Deep Dive: Cooper and Granucci Lesser (2022)</title>
+    <link>{{ site.url }}{{ '/deep-dive-cooper-and-granucci-lesser-2022/' }}</link>
+    <atom:link href="{{ site.url }}{{ page.url }}" rel="self" type="application/rss+xml"/>
+    <description>{{ site.description | default: "Student reading podcast series generated via Google Notebook LM." }}</description>
+    <language>en-us</language>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+
+    <!-- Channel artwork -->
+    <itunes:image href="{{ site.url }}/assets/media/deep-dive-cooper-and-granucci-lesser-2022-cover-art.png" />
+    <image>
+      <url>{{ site.url }}/assets/media/deep-dive-cooper-and-granucci-lesser-2022-cover-art.png</url>
+      <title>{{ site.title }} – Deep Dive: Cooper and Granucci Lesser (2022)</title>
+      <link>{{ site.url }}{{ '/deep-dive-cooper-and-granucci-lesser-2022/' }}</link>
+    </image>
+
+    <!-- Optional iTunes metadata -->
+    <itunes:author>{{ site.title }}</itunes:author>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:category text="Education">
+      <itunes:category text="Higher Education"/>
+    </itunes:category>
+
+    <!-- Episode items -->
+    {% assign eps = site.podcasts 
+      | where: "layout", "reading-support"
+      | where_exp: "ep", "ep.path contains page.series"
+      | sort: "date"
+    %}
+
+    {% for ep in eps %}
+      <item>
+        <title>{{ ep.title | xml_escape }}</title>
+        <description>{{ ep.description | xml_escape }}</description>
+        {% if ep.audio_url %}
+          <enclosure url="{{ ep.audio_url }}" type="audio/mpeg" />
+        {% endif %}
+        <pubDate>{{ ep.date | date_to_rfc822 }}</pubDate>
+        <guid isPermaLink="true">{{ site.url }}{{ ep.url }}</guid>
+        {% if ep.duration %}
+          <itunes:duration>{{ ep.duration }}</itunes:duration>
+        {% endif %}
+        {% if ep.image %}
+          <itunes:image href="{{ site.url }}{{ ep.image }}" />
+        {% endif %}
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
