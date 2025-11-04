@@ -7,7 +7,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   This site is a place for Jacob Campbell to experement and use to share
   various things.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://vsp.ink" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  campjacob
 
 # ----------------------------------
