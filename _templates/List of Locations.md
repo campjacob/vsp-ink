@@ -7,3 +7,12 @@
 🛩️ Traveling
 🚑 Medical 
 🏝️ Vacation
+
+Locations for TRML
+
+Remote
+CBC
+Toppenish
+Kennewick
+Community
+By appt
