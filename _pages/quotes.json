@@ -1,0 +1,12 @@
+---
+permalink: /quotes.json
+layout: null
+---
+{
+  "quote": {
+    "text": "Placeholder quote.",
+    "author": "You"
+  },
+  "source": "manual",
+  "updated": "{{ site.time | date_to_xmlschema }}"
+}
