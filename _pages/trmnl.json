@@ -1,0 +1,131 @@
+---
+permalink: /trmnl.json
+layout: null
+---
+
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign today_found = false %}
+
+{% assign today_location = "" %}
+{% assign today_note = "" %}
+{% assign today_schedule = "" %}
+
+{%- for day in site.daily -%}
+  {% assign day_date = day.date | date: "%Y-%m-%d" %}
+  {% if day_date == today %}
+    {% assign today_found = true %}
+    {% assign today_location = day.location %}
+    {% assign today_note = day.title | default: "" %}
+    {% assign today_schedule = day.content | strip_newlines %}
+  {% endif %}
+{%- endfor -%}
+
+
+{% assign monday_trml = "By appt" | split: "|" %}
+{% assign tuesday_trml = "By appt" | split: "|" %}
+{% assign wednesday_trml = "By appt" | split: "|" %}
+{% assign thursday_trml = "By appt" | split: "|" %}
+{% assign friday_trml = "By appt" | split: "|" %}
+{% assign saturday_trml = "By appt" | split: "|" %}
+{% assign sunday_trml = "By appt" | split: "|" %}
+
+{% assign week_year = site.time | date: "%Y" %}
+{% assign week_number = site.time | date: "%V" %}
+{% assign week_code = week_year | append: "-W" | append: week_number %}
+
+{% for week in site.weekly %}
+  {% if week.slug == week_code %}
+
+    {% if week.monday_trml %}
+      {% if week.monday_trml.first %}
+        {% assign monday_trml = week.monday_trml %}
+      {% else %}
+        {% assign monday_trml = week.monday_trml | split: "|" %}
+      {% endif %}
+    {% endif %}
+
+    {% if week.tuesday_trml %}
+      {% if week.tuesday_trml.first %}
+        {% assign tuesday_trml = week.tuesday_trml %}
+      {% else %}
+        {% assign tuesday_trml = week.tuesday_trml | split: "|" %}
+      {% endif %}
+    {% endif %}
+
+    {% if week.wednesday_trml %}
+      {% if week.wednesday_trml.first %}
+        {% assign wednesday_trml = week.wednesday_trml %}
+      {% else %}
+        {% assign wednesday_trml = week.wednesday_trml | split: "|" %}
+      {% endif %}
+    {% endif %}
+
+    {% if week.thursday_trml %}
+      {% if week.thursday_trml.first %}
+        {% assign thursday_trml = week.thursday_trml %}
+      {% else %}
+        {% assign thursday_trml = week.thursday_trml | split: "|" %}
+      {% endif %}
+    {% endif %}
+
+    {% if week.friday_trml %}
+      {% if week.friday_trml.first %}
+        {% assign friday_trml = week.friday_trml %}
+      {% else %}
+        {% assign friday_trml = week.friday_trml | split: "|" %}
+      {% endif %}
+    {% endif %}
+
+    {% if week.saturday_trml %}
+      {% if week.saturday_trml.first %}
+        {% assign saturday_trml = week.saturday_trml %}
+      {% else %}
+        {% assign saturday_trml = week.saturday_trml | split: "|" %}
+      {% endif %}
+    {% endif %}
+
+    {% if week.sunday_trml %}
+      {% if week.sunday_trml.first %}
+        {% assign sunday_trml = week.sunday_trml %}
+      {% else %}
+        {% assign sunday_trml = week.sunday_trml | split: "|" %}
+      {% endif %}
+    {% endif %}
+
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{
+  "meta": {
+    "updated": "{{ site.time | date_to_xmlschema }}"
+  },
+
+  "header": {
+    "date": "{{ site.time | date: '%A, %B %d, %Y' }}",
+    "week": "Week {{ site.time | date: '%V' }}"
+  },
+
+  "status": {
+    "location": "{{ today_location | escape }}",
+    "note": "{{ today_note | escape }}"
+  },
+
+  "schedule_html": {{ today_schedule | jsonify }},
+
+  "weekly": {
+    "monday": {{ monday_trml | jsonify }},
+    "tuesday": {{ tuesday_trml | jsonify }},
+    "wednesday": {{ wednesday_trml | jsonify }},
+    "thursday": {{ thursday_trml | jsonify }},
+    "friday": {{ friday_trml | jsonify }},
+    "saturday": {{ saturday_trml | jsonify }},
+    "sunday": {{ sunday_trml | jsonify }}
+  },
+
+  "quote": {
+    "label": "Daily Quote",
+    "text": "{{ site.data.quote.quote.text | escape }}",
+    "author": "{{ site.data.quote.quote.author | escape }}"
+  }
+}
