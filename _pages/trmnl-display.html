@@ -1,0 +1,236 @@
+---
+permalink: /trmnl-display
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>TRMNL Now</title>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  width: 800px;
+  height: 480px;
+  overflow: hidden;
+  background: #fff;
+  color: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+}
+
+/* Week table */
+.week-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.week-table th,
+.week-table td {
+  text-align: center;
+  padding: 4px;
+  line-height: 1;
+}
+
+.week-table th {
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+}
+
+.week-table td {
+  font-size: 12px;
+  border: 1px solid #000;
+}
+
+/* Main layout */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "center-top center-top"
+    "left       right"
+    "center-bot center-bot";
+  flex: 1;
+}
+
+.center-top {
+  grid-area: center-top;
+  text-align: center;
+  font-size: 14px;
+}
+
+.center-top h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.left {
+  grid-area: left;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.right {
+  grid-area: right;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.left ul {
+  margin: 6px 0 0 18px;
+  padding: 0;
+}
+
+.left li {
+  margin-bottom: 6px;
+}
+
+.avatar {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.quote-box {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border: 1px solid #000;
+  font-size: 14px;
+  line-height: 1;
+  max-width: 320px;
+}
+
+.quote-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.quote-text {
+  font-style: italic;
+}
+
+.quote-author {
+  margin-top: 6px;
+  font-size: 12px;
+  text-align: right;
+}
+</style>
+</head>
+<body>
+
+<!-- Week overview -->
+<table class="week-table">
+  <tr>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    <th>Sunday</th>
+  </tr>
+  <tr>
+    <td id="day-monday"></td>
+    <td id="day-tuesday"></td>
+    <td id="day-wednesday"></td>
+    <td id="day-thursday"></td>
+    <td id="day-friday"></td>
+    <td id="day-saturday"></td>
+    <td id="day-sunday"></td>
+  </tr>
+</table>
+
+<!-- Main content -->
+<div class="content">
+
+<!-- Center (top) -->
+<div class="center-top">
+  <h1 id="header-date" class="date"></h1>
+  <div id="header-week"></div>
+  <div id="status-location"></div>
+</div>
+
+<!-- Left -->
+<div class="left" id="left-panel"></div>
+
+<!-- Right -->
+<div class="right">
+<p id="office-hours"></p>
+
+<div id="quote" class="quote-box">
+  <div class="quote-label">Daily Quote</div>
+  <div class="quote-text"></div>
+  <div class="quote-author"></div>
+</div>
+
+</div>
+
+<img src="/assets/media/jacob-bw-profile.png" alt="Jacob Campbell" class="avatar" />
+
+</div>
+
+<script>
+fetch("https://vsp.ink/trmnl.json")
+  .then(res => {
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    return res.json();
+  })
+  .then(data => {
+    if (data.header) {
+      document.getElementById("header-date").textContent = data.header.date || "";
+      document.getElementById("header-week").textContent = data.header.week || "";
+    }
+    if (data.status) {
+      document.getElementById("status-location").textContent = data.status.location || "";
+    }
+    if (data.weekly) {
+      const days = ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"];
+      days.forEach(day => {
+        const el = document.getElementById("day-" + day);
+        if (el && Array.isArray(data.weekly[day])) {
+          el.textContent = data.weekly[day].join(" · ");
+        }
+      });
+    }
+    if (data.schedule_html) {
+      document.getElementById("left-panel").innerHTML = data.schedule_html;
+    }
+    if (data.office_hours_html) {
+      document.getElementById("office-hours").innerHTML = data.office_hours_html;
+    }
+    if (data.quote && data.quote.text) {
+      const quoteEl = document.getElementById("quote");
+      quoteEl.querySelector(".quote-label").textContent = data.quote.label || "Daily Quote";
+      quoteEl.querySelector(".quote-text").textContent = '"' + data.quote.text + '"';
+      quoteEl.querySelector(".quote-author").textContent = "— " + data.quote.author;
+    }
+  })
+  .catch(err => {
+    document.getElementById("left-panel").textContent = "Unable to load data: " + err;
+    const quoteEl = document.getElementById("quote");
+    if (quoteEl) quoteEl.style.display = "none";
+  });
+</script>
+</body>
+</html>
