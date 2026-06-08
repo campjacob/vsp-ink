@@ -1,5 +1,5 @@
 ---
-title: "Using Metacognition to Check Your Own Biases and the Biases of Others"
+title: "Chapter 04 Using Metacognition to Check Your Own Biases and the Biases of Others"
 name: 4-using-metacognition-to-check-your-own-biases-and-the-biases-of-others
 series: "deep-dive-linquiti-2022"
 date: 2026-06-08 13:16:21
