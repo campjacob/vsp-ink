@@ -1,14 +1,14 @@
 ---
-title: "Chapters 5 and 6 Logical Blueprints for Social Policy"
-name: 05-and-06-logical-blueprints-for-social-policy.md
+title: "Chapter 7: The Mindset of an Effective Policy Analyst"
+name: 07-the-mindset-of-an-effective-policy-analyst.md
 series: "deep-dive-linquiti-2022"
-date: 2026-06-15 10:38:59
-audio_url: "https://d2y36twrtb17ty.cloudfront.net/sessions/53591094-41af-488f-a72f-b46a0126aaa6/c8452a71-1233-452d-b8bf-b46a0126aab2-c1b1f9e8-a769-4a15-8339-b46a01278a85.mp4?invocationId=f2229681-e368-f111-aa05-0a1a827ad0ec"
-order: 4
+date: 2026-06-22 15:04:44
+audio_url: "https://d2y36twrtb17ty.cloudfront.net/sessions/2da823a9-1a31-46dd-8d1c-b471016bcc00/bc94b8c6-857d-40dc-a481-b471016bcc0d-f89ee8bf-97f7-4a82-900a-b471016c6a45.mp4?invocationId=9cf211b4-866e-f111-aa05-0a1a827ad0ec"
+order: 5
 ---
 
-This episode digs into two chapters from Peter Linquiti's Rebooting Policy Analysis, exploring the logic and evidence standards that transform a policy argument from passionate opinion into rigorous professional analysis. Drawing on Stephen Jay Gould's concept of "provisional assent," the conversation reframes provisional truth not as weakness but as intellectual honesty — and shows why anchoring every claim in a clear counterfactual is what separates credible analysis from advocacy.
+This episode was generated using Google NotebookLM based on the course reading for SOWK 588 Advanced Policy Practice, and is designed to help you engage with and review Chapter 7 of Peter Linquiti's Rebooting Policy Analysis. The chapter focuses on the mindset of the effective policy analyst — the internal operating system that determines whether your analytical skills actually translate into real-world impact.
 
-The logic toolbox covered includes causal reasoning, reasoning by analogy, abductive reasoning (systematically eliminating competing hypotheses through a matrix of evidence), and reasoning by classification — illustrated through a landmark study showing how categorizing homeless shelter users by usage pattern completely rewrote housing policy design. The episode also names the is-ought trap: the gap between describing a problem and prescribing a solution that moral urgency alone can never bridge.
+The episode unpacks how to distinguish analysis driven by genuine inquiry from analysis driven by advocacy, and why confusing the two can quietly undermine your own work. From there it explores the 80-20 principle of policy analysis — why 80% of your analytic value comes from the first 20% of your effort — and introduces Fermiizing as a technique for generating actionable estimates when the data you need simply doesn't exist.
 
-Finally, listeners learn to weigh evidence by triangulating across stakeholders, gray literature, and peer-reviewed research; to apply four validity tests to any study; and to present findings through a "traceable account" that builds trust with decision-makers without overstating certainty.
+The episode closes with Linquiti's six traits of the effective policy analyst and Philip Tetlock's research on foxes versus hedgehogs: analysts who draw on multiple frameworks and update their thinking when evidence shifts consistently outperform those who apply one grand theory to every problem. For MSW students already trained to see clients within their full environment, the fox mindset may be closer than you think.
