@@ -2,33 +2,156 @@
 <html lang="en-US" data-bs-theme="auto">
 <head>
   {% include head.htm %}
+<style>
+  .embed-style { display: none; }
+  .embed-style.active { display: block; }
+
+  /* Style 3 — mosaic */
+  .style3-mosaic { column-count: 3; column-gap: 6px; }
+  @media (max-width: 576px) { .style3-mosaic { column-count: 2; } }
+  .style3-mosaic > * { break-inside: avoid; margin-bottom: 6px; width: 100%; display: block; border-radius: 4px; }
+
+  /* Style 4 — filmstrip with click controls */
+  .style4-wrap { position: relative; }
+  .style4-strip { display: flex; gap: 6px; overflow-x: auto; scroll-snap-type: x proximity; padding-bottom: .5rem; }
+  .style4-strip img, .style4-strip video { height: max(200px, calc(100vh - 90px)); width: auto; flex-shrink: 0; scroll-snap-align: start; border-radius: 4px; }
+  .style4-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5; border: 0; width: 2.2rem; height: 2.2rem;
+    border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-size: 1.2rem; line-height: 1; }
+  .style4-btn:hover { background: rgba(0,0,0,.8); }
+  .style4-prev { left: .5rem; }
+  .style4-next { right: .5rem; }
+
+  /* Style 6 — editorial split */
+  .style6 .carousel img, .style6 .carousel video { height: 380px; object-fit: cover; }
+  .style6-desc { max-height: 250px; overflow-y: auto; }
+
+  /* Style 10 — Ken Burns slideshow */
+  .style10 .carousel-item { overflow: hidden; }
+  .style10 .carousel-item img { width: 100%; height: 100vh; object-fit: cover; }
+  .style10 .carousel-item video { width: 100%; height: 100vh; object-fit: contain; background: #000; }
+  .style10 .carousel-item.active img { animation: kenburns 8s ease-out both; }
+  @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.15) translate(2%, -2%); } }
+  .style10 .overlay-caption { position: absolute; inset: auto 0 0 0; z-index: 5; color: #fff;
+    background: linear-gradient(transparent, rgba(0,0,0,.75)); padding: 2.5rem 1rem .9rem; }
+  .style10 .overlay-caption a { color: #fff; font-weight: 600; text-decoration: none; }
+  .style10 .overlay-caption p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden; font-size: .85rem; margin: 0; }
+</style>
 </head>
 
 <body>
-<div class="card">
-  <div class="card-header">
-    <img src="https://photos.vsp.ink/images/_assets/content/images/users/j2/av_1744972599.jpeg" alt="Jacob Campbell Profile" class="rounded-circle" width="30"> <a href="https://photos.vsp.ink/">photos.VSP.ink</a>
-  </div>
-  <div class="card-body">
-      <h5 class="card-title"><a href="https://photos.vsp.ink/album/{{ page.chevereto_id }}" target="blank">{{ page.title }}</a></h5>
-    <p class="card-text text-truncate" style="max-height: 3em; overflow: hidden; cursor: pointer;" onclick="toggleTruncate(this)">
-      {{ page.description }}
-    </p>
-    <div id="carouselExample" class="carousel slide">
-      <div class="carousel-inner">
+{%- assign active_images = page.images | where: 'img_active', true -%}
+{%- assign default_style = page.style | default: 'card' -%}
+<noscript><style>.embed-style[data-style="{{ default_style }}"] { display: block; }</style></noscript>
+
+<!-- Style 1 — Classic Card (default) -->
+<div class="embed-style" data-style="card">
+  <div class="card">
+    <div class="card-header">
+      <img src="https://photos.vsp.ink/images/_assets/content/images/users/j2/av_1744972599.jpeg" alt="Jacob Campbell Profile" class="rounded-circle" width="30"> <a href="https://photos.vsp.ink/">photos.VSP.ink</a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><a href="https://photos.vsp.ink/album/{{ page.chevereto_id }}" target="_blank" rel="noopener">{{ page.title }}</a></h5>
+      <p class="card-text text-truncate" style="max-height: 3em; overflow: hidden; cursor: pointer;" onclick="toggleTruncate(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleTruncate(this);}" role="button" tabindex="0">
+        {{ page.description }}
+      </p>
+      <div id="carousel-s1" class="carousel slide">
+        <div class="carousel-inner">
 {%- for image in page.images -%}
-        <div class="carousel-item{% if image.img_active %} active{% endif %}">
-          <img src="{{ image.img_url }}" class="d-block w-100" alt="{{ image.img_alt }}">
+{%- if image.img_active or active_images == empty and forloop.first -%}{%- assign is_active = true -%}{%- else -%}{%- assign is_active = false -%}{%- endif %}
+          <div class="carousel-item{% if is_active %} active{% endif %}">
+            {% include embed_media.htm media=image eager=is_active class="d-block w-100" %}
+          </div>
+{%- endfor %}
         </div>
-{%- endfor -%}
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-s1" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-s1" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Style 3 — Mosaic -->
+<div class="embed-style" data-style="mosaic">
+  <div class="d-flex justify-content-between align-items-baseline m-2">
+    <h5 class="m-0"><a href="https://photos.vsp.ink/album/{{ page.chevereto_id }}" target="_blank" rel="noopener">{{ page.title }}</a></h5>
+    <span class="text-body-secondary small text-nowrap ms-2">{{ page.images | size }} photos</span>
+  </div>
+  <div class="style3-mosaic px-2 pb-2">
+{%- for image in page.images %}
+    {% include embed_media.htm media=image %}
+{%- endfor %}
+  </div>
+</div>
+
+<!-- Style 4 — Filmstrip with click controls -->
+<div class="embed-style" data-style="filmstrip">
+  <div class="d-flex justify-content-between align-items-baseline m-2">
+    <h5 class="m-0"><a href="https://photos.vsp.ink/album/{{ page.chevereto_id }}" target="_blank" rel="noopener">{{ page.title }}</a></h5>
+    <span class="text-body-secondary small text-nowrap ms-2">{{ page.images | size }} photos</span>
+  </div>
+  <div class="style4-wrap px-2 pb-2">
+    <button class="style4-btn style4-prev" type="button" aria-label="Scroll back">&#8249;</button>
+    <div class="style4-strip">
+{%- for image in page.images %}
+      {% include embed_media.htm media=image %}
+{%- endfor %}
+    </div>
+    <button class="style4-btn style4-next" type="button" aria-label="Scroll forward">&#8250;</button>
+  </div>
+</div>
+
+<!-- Style 6 — Editorial Split -->
+<div class="embed-style" data-style="editorial">
+  <div class="row g-0 border rounded overflow-hidden style6 m-2">
+    <div class="col-md-7">
+      <div id="carousel-s6" class="carousel slide">
+        <div class="carousel-inner">
+{%- for image in page.images -%}
+{%- if image.img_active or active_images == empty and forloop.first -%}{%- assign is_active = true -%}{%- else -%}{%- assign is_active = false -%}{%- endif %}
+          <div class="carousel-item{% if is_active %} active{% endif %}">
+            {% include embed_media.htm media=image eager=is_active class="d-block w-100" %}
+          </div>
+{%- endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-s6" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carousel-s6" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="col-md-5 p-3 d-flex flex-column">
+      <small class="text-body-secondary text-uppercase">photos.VSP.ink</small>
+      <h5 class="mt-1"><a href="https://photos.vsp.ink/album/{{ page.chevereto_id }}" target="_blank" rel="noopener">{{ page.title }}</a></h5>
+      <p class="small style6-desc flex-grow-1">{{ page.description }}</p>
+      <span class="small text-body-secondary">{{ page.images | size }} photos</span>
+    </div>
+  </div>
+</div>
+
+<!-- Style 10 — Ken Burns slideshow -->
+<div class="embed-style" data-style="kenburns">
+  <div id="carousel-s10" class="carousel slide carousel-fade style10">
+    <div class="carousel-inner">
+{%- for image in page.images -%}
+{%- if image.img_active or active_images == empty and forloop.first -%}{%- assign is_active = true -%}{%- else -%}{%- assign is_active = false -%}{%- endif %}
+      <div class="carousel-item{% if is_active %} active{% endif %}">
+        {% include embed_media.htm media=image eager=is_active %}
+      </div>
+{%- endfor %}
+      <div class="overlay-caption">
+        <a href="https://photos.vsp.ink/album/{{ page.chevereto_id }}" target="_blank" rel="noopener">{{ page.title }}</a>
+        <p>{{ page.description }}</p>
       </div>
     </div>
   </div>
@@ -50,6 +173,29 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/1e7b9d9fdb.js" crossorigin="anonymous"></script>
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var style = params.get('style') || '{{ default_style }}';
+    var chosen = document.querySelector('.embed-style[data-style="' + style + '"]')
+      || document.querySelector('.embed-style[data-style="{{ default_style }}"]')
+      || document.querySelector('.embed-style');
+    chosen.classList.add('active');
+
+    document.querySelectorAll('.style4-wrap').forEach(function (wrap) {
+      var strip = wrap.querySelector('.style4-strip');
+      wrap.querySelector('.style4-prev').addEventListener('click', function () {
+        strip.scrollBy({ left: -strip.clientWidth * 0.8, behavior: 'smooth' });
+      });
+      wrap.querySelector('.style4-next').addEventListener('click', function () {
+        strip.scrollBy({ left: strip.clientWidth * 0.8, behavior: 'smooth' });
+      });
+    });
+
+    if (chosen.dataset.style === 'kenburns') {
+      new bootstrap.Carousel(chosen.querySelector('.carousel'), { ride: 'carousel', interval: 4000, pause: false });
+    }
+  })();
+</script>
 </body>
 </html>
