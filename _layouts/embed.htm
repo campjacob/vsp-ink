@@ -85,7 +85,7 @@
   </div>
   <div class="style3-mosaic px-2 pb-2">
 {%- for image in page.images %}
-    {% include embed_media.htm media=image %}
+    {% include embed_media.htm media=image variant='md' %}
 {%- endfor %}
   </div>
 </div>
@@ -100,7 +100,7 @@
     <button class="style4-btn style4-prev" type="button" aria-label="Scroll back">&#8249;</button>
     <div class="style4-strip">
 {%- for image in page.images %}
-      {% include embed_media.htm media=image %}
+      {% include embed_media.htm media=image variant='md' %}
 {%- endfor %}
     </div>
     <button class="style4-btn style4-next" type="button" aria-label="Scroll forward">&#8250;</button>
@@ -116,7 +116,7 @@
 {%- for image in page.images -%}
 {%- if image.img_active or active_images == empty and forloop.first -%}{%- assign is_active = true -%}{%- else -%}{%- assign is_active = false -%}{%- endif %}
           <div class="carousel-item{% if is_active %} active{% endif %}">
-            {% include embed_media.htm media=image eager=is_active class="d-block w-100" %}
+            {% include embed_media.htm media=image eager=is_active variant='md' class="d-block w-100" %}
           </div>
 {%- endfor %}
         </div>
@@ -194,6 +194,21 @@
 
     if (chosen.dataset.style === 'kenburns') {
       new bootstrap.Carousel(chosen.querySelector('.carousel'), { ride: 'carousel', interval: 4000, pause: false });
+    }
+
+    var activeCarousel = chosen.querySelector('.carousel');
+    function preloadNeighbors() {
+      var items = activeCarousel.querySelectorAll('.carousel-item');
+      var idx = Array.prototype.indexOf.call(items, activeCarousel.querySelector('.carousel-item.active'));
+      [1, -1].forEach(function (step) {
+        var item = items[(idx + step + items.length) % items.length];
+        var img = item && item.querySelector('img[loading="lazy"]');
+        if (img) img.setAttribute('loading', 'eager');
+      });
+    }
+    if (activeCarousel) {
+      preloadNeighbors();
+      activeCarousel.addEventListener('slid.bs.carousel', preloadNeighbors);
     }
   })();
 </script>

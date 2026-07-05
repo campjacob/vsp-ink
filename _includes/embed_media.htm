@@ -1,6 +1,11 @@
 {%- assign file_ext = include.media.img_url | downcase | split: '.' | last -%}
+{%- if include.variant == 'md' -%}
+{%- assign media_src = include.media.img_url_md | default: include.media.img_url -%}
+{%- else -%}
+{%- assign media_src = include.media.img_url -%}
+{%- endif -%}
 {%- if include.media.img_video or file_ext == 'mov' or file_ext == 'mp4' or file_ext == 'm4v' or file_ext == 'webm' -%}
 <video class="{{ include.class }}" controls playsinline preload="{% if include.eager %}metadata{% else %}none{% endif %}"{% if include.media.img_poster %} poster="{{ include.media.img_poster }}"{% endif %} aria-label="{{ include.media.img_alt }}"><source src="{{ include.media.img_url }}">{{ include.media.img_alt }}</video>
 {%- else -%}
-<img src="{{ include.media.img_url }}" class="{{ include.class }}" alt="{{ include.media.img_alt }}"{% unless include.eager %} loading="lazy"{% endunless %}>
+<img src="{{ media_src }}" class="{{ include.class }}" alt="{{ include.media.img_alt }}"{% unless include.eager %} loading="lazy"{% endunless %}>
 {%- endif -%}
