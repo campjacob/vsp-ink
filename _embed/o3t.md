@@ -1,9 +1,9 @@
 ---
-title: "2026 Mt Rainer Day Hike"
+title: "2026 Mt. Rainier Day Hike"
 chevereto_id: o3t
 permalink: /embed/o3t
 date: 2026-07-05
-description: "We decided to visit Mt Rainer for the observed 4th of July on Friday the 3rd. It was a fun hike, but pretty hard as well. We took the Goldengate trail up to Skyline and looped back to Paradise. So many gorgeous views. We also went and hike up to view Bench Lake."
+description: "We decided to visit Mt Rainer for the observed 4th of July on Friday the 3rd. It was a fun hike, but pretty hard as well. We took the Golden Gate Trail up to Skyline and looped back to Paradise. So many gorgeous views. We also went and hiked up to view Bench Lake."
 images:
   - img_url: "https://photos.vsp.ink/images/2026/07/05/IMG_3340.jpeg"
     img_alt: "Rocky mountain peak with dense coniferous forest and snow-capped peaks visible in the distant background under a partly cloudy sky."
