@@ -58,8 +58,21 @@ Useful flags:
 | `--style mosaic` | Set the album's default embed style in the front matter |
 | `--force` | Regenerate a doc from scratch (all alt text redone) |
 | `--model haiku` | Which claude model writes the alt text (default: haiku) |
+| `--delete` | Remove the local doc for an album that's been deleted on photos.VSP.ink |
 
 The usual routine for a new album: upload the photos into an album on photos.VSP.ink, give the album a title and description there, run `python3 ~/scripts/create_embed.py --new`, skim the generated file in `_embed/` (especially the alt text), then commit and push. The album appears at `/embed/<code>` and on [/embed/](/embed/) automatically.
+
+## Removing a deleted album's embed
+
+Deleting an album on photos.VSP.ink doesn't touch its `_embed/<album-code>.md` doc — the file is local to this repo, so the embed page (and any post/page that iframes it) stays up but silently references photos that no longer exist.
+
+Running `python3 ~/scripts/create_embed.py` with no arguments now flags these as **orphaned**: any local `_embed/` doc whose album code no longer resolves on photos.VSP.ink. Clean one up with:
+
+```bash
+python3 ~/scripts/create_embed.py <album-code> --delete
+```
+
+The script double-checks the album is actually gone (a live 404) before deleting anything — if the album still exists (public, private, or otherwise), it refuses and leaves the doc alone. Note that re-uploading the same photos as a "new" album on Chevereto gets a **new album code**, not the old one — after recreating an album, run `--new` (or create the doc for the specific new code) and update any page/post that embedded the old code to point at the new one.
 
 Notes: the script only sees **public** albums (private, link-only, and password-protected ones are skipped). Videos in an album become playable slides with their poster frame. The album code keeps its exact upper/lowercase in the embed URL — the album at `photos.vsp.ink/album/oBJ` becomes `vsp.ink/embed/oBJ`.
 
