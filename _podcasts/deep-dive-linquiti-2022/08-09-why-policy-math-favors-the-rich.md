@@ -4,6 +4,7 @@ name: 08-09-why-policy-math-favors-the-rich.md
 series: "deep-dive-linquiti-2022"
 date: 2026-06-29 15:58:51
 audio_url: "https://d2y36twrtb17ty.cloudfront.net/sessions/43dc95a5-4beb-4a5a-992f-b478017a0a77/4993db43-376e-4da3-a95f-b478017a0a84-fef0e917-d2bd-4409-a46d-b478017a7a62.mp4?invocationId=9045c438-0e74-f111-aa05-0a1a827ad0ec"
+duration: "20:41"
 order: 6
 ---
 

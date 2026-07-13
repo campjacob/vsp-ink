@@ -4,6 +4,7 @@ name: 07-the-mindset-of-an-effective-policy-analyst.md
 series: "deep-dive-linquiti-2022"
 date: 2026-06-22 15:04:44
 audio_url: "https://d2y36twrtb17ty.cloudfront.net/sessions/2da823a9-1a31-46dd-8d1c-b471016bcc00/bc94b8c6-857d-40dc-a481-b471016bcc0d-f89ee8bf-97f7-4a82-900a-b471016c6a45.mp4?invocationId=9cf211b4-866e-f111-aa05-0a1a827ad0ec"
+duration: "21:01"
 order: 5
 ---
 

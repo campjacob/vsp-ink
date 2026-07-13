@@ -3,7 +3,8 @@ title: "Chapters 12 through 15: Policy Analysis for a Messy World"
 name: 12-through-15-policy-analysis-for-a-messy-world.md
 series: "deep-dive-linquiti-2022"
 date: 2026-07-13 13:10:13
-audio_url: "https://d2y36twrtb17ty.cloudfront.net/sessions/b6305f71-1841-4590-a1a4-b47f0174c243/da4e2038-6221-422e-bb7d-b47f0174c24e-a3d6b781-55e9-4907-a665-b47f01752f60.mp4?invocationId=23c61fae-8b79-f111-aa05-0a1a827ad0ec"
+audio_url: "https://d2y36twrtb17ty.cloudfront.net/sessions/f7bb2410-c093-4cf2-8355-b486014d58c4/63695a77-0223-40d1-93d0-b486014d58c9-a8d93258-7919-492c-9321-b486014dd52f.mp4?invocationId=6615c4cb-f77e-f111-aa05-0a1a827ad0ec"
+duration: "22:12"
 order: 8
 ---
 

@@ -4,6 +4,7 @@ name: 05-and-06-logical-blueprints-for-social-policy.md
 series: "deep-dive-linquiti-2022"
 date: 2026-06-15 10:38:59
 audio_url: "https://d2y36twrtb17ty.cloudfront.net/sessions/53591094-41af-488f-a72f-b46a0126aaa6/c8452a71-1233-452d-b8bf-b46a0126aab2-c1b1f9e8-a769-4a15-8339-b46a01278a85.mp4?invocationId=f2229681-e368-f111-aa05-0a1a827ad0ec"
+duration: "24:59"
 order: 4
 ---
 
