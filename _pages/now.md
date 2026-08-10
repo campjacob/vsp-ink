@@ -29,7 +29,7 @@ permalink: /now
   {% if day_date_normalized == current_date %}
     {% assign day_found = true %}
   <div class="alert alert-success" role="alert">
-    <strong>Jacob's Location:</strong> {{ day.location }}
+    <strong>Jacob's Location:</strong> {{ day.location | join: ", " }}
   </div>
   {{ day.content }}
   {% endif %}
@@ -110,31 +110,31 @@ The following is my general plan for this week.
   <tbody>
     <tr>
       <td>Monday</td>
-      <td>{{ monday_location }}</td>
+      <td>{{ monday_location | join: ", " }}</td>
     </tr>
     <tr>
       <td>Tuesday</td>
-      <td>{{ tuesday_location }}</td>
+      <td>{{ tuesday_location | join: ", " }}</td>
     </tr>
     <tr>
       <td>Wednesday</td>
-      <td>{{ wednesday_location }}</td>
+      <td>{{ wednesday_location | join: ", " }}</td>
     </tr>
     <tr>
       <td>Thursday</td>
-      <td>{{ thursday_location }}</td>
+      <td>{{ thursday_location | join: ", " }}</td>
     </tr>
     <tr>
       <td>Friday</td>
-      <td>{{ friday_location }}</td>
+      <td>{{ friday_location | join: ", " }}</td>
     </tr>
     <tr>
       <td>Saturday</td>
-      <td>{{ saturday_location }}</td>
+      <td>{{ saturday_location | join: ", " }}</td>
     </tr>
     <tr>
       <td>Sunday</td>
-      <td>{{ sunday_location }}</td>
+      <td>{{ sunday_location | join: ", " }}</td>
     </tr>
   </tbody>
 </table>

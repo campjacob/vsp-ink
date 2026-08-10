@@ -6,7 +6,7 @@ layout: default
 
 {% if page.location %}
 <div class="alert alert-success" role="alert">
-  Jacob is {{ page.location }}
+  Jacob is {{ page.location | join: ", " }}
 </div>
 {% endif %}
 
