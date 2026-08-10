@@ -8,3 +8,9 @@ vendor/
 .obsidian/
 *.sublime-project
 *.sublime-workspace
+
+# Editor state
+.nova/
+*.bbprojectd/
+.vscode/
+.idea/
