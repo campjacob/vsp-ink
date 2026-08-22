@@ -27,7 +27,7 @@ Welcome to the **Deep Dive** podcast series, supporting student readings from De
       </small>
     </p>
     {% if ep.description %}
-      <p>{{ ep.description }}</p>
+      {{ ep.description | markdownify }}
     {% endif %}
     {% if ep.audio_url %}
       <audio controls src="{{ ep.audio_url }}"></audio>

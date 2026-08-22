@@ -1,22 +1,39 @@
 ---
 layout: default
 ---
+{% assign series_path = '/' | append: page.series | append: '/' %}
+{% assign series_page = site.podcasts | where: "permalink", series_path | first %}
+{% assign series_title = series_page.title | default: page.series %}
+
 <article>
+  <nav aria-label="Breadcrumb" style="margin-bottom: 0.25rem;">
+    <small>
+      <a href="{{ '/podcasts/' | relative_url }}">Podcasts</a>
+      <span aria-hidden="true"> / </span>
+      <a href="{{ series_path | relative_url }}">{{ series_title }}</a>
+    </small>
+  </nav>
+
   <h1>{{ page.title }}</h1>
-  <p><small>{{ page.date | date: "%B %-d, %Y" }}{% if page.duration %} • {{ page.duration }}{% endif %}</small></p>
+  <p><small>{{ page.date | date: "%B %-d, %Y" }}{% if page.duration %} • {{ page.duration }}{% endif %}{% if page.course %} • {{ page.course }}{% endif %}</small></p>
 
   {% if page.audio_url %}
     <audio controls src="{{ page.audio_url }}"></audio>
   {% endif %}
 
   {% if page.description %}
-    <p>{{ page.description }}</p>
+    {{ page.description | markdownify }}
   {% endif %}
 
-  {{ content }}
-
-  {% assign series_path = '/' | append: page.series | append: '/' %}
-  {% assign series_title = site.pages | where: "permalink", series_path | first | default: page.series %}
+  {% assign transcript = content | strip %}
+  {% if transcript != '' %}
+  <details style="margin-top: 2rem; border-top: 1px solid #ddd; padding-top: 1rem;">
+    <summary style="cursor: pointer; font-weight: 600;">Transcript</summary>
+    <div style="margin-top: 1rem;">
+      {{ content }}
+    </div>
+  </details>
+  {% endif %}
 
   <!-- Button to open modal -->
   <div style="margin-top: 2rem;">
@@ -28,7 +45,7 @@ layout: default
     <h3>Copy LMS Snippet</h3>
     <p>You can copy the snippet below to include this episode in your course page:</p>
     <textarea id="snippetText" readonly rows="6" style="width:100%; font-family: monospace;">
-You can listen to a podcast episode for this week's reading [{{ page.title }}]({{ page.url | absolute_url }}), or see the entire series [{{ series_title.title | default: 'Podcast Series' }}]({{ series_path | absolute_url }}).
+You can listen to a podcast episode for this week's reading [{{ page.title }}]({{ page.url | absolute_url }}), or see the entire series [{{ series_title }}]({{ series_path | absolute_url }}).
 
 <audio controls src="{{ page.audio_url }}"></audio>
     </textarea>

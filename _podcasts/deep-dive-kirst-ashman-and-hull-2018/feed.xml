@@ -7,7 +7,8 @@ series: deep-dive-kirst-ashman-and-hull-2018
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
-     xmlns:atom="http://www.w3.org/2005/Atom">
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <!-- Basic metadata -->
     <title>{{ site.title }} – Deep Dive: Kirst-Ashman and Hull (2018)</title>
@@ -26,7 +27,8 @@ series: deep-dive-kirst-ashman-and-hull-2018
     </image>
 
     <!-- Optional iTunes metadata -->
-    <itunes:author>{{ site.title }}</itunes:author>
+    <itunes:author>Jacob Campbell</itunes:author>
+    <itunes:type>serial</itunes:type>
     <itunes:explicit>no</itunes:explicit>
     <itunes:category text="Education">
       <itunes:category text="Higher Education"/>
@@ -43,13 +45,18 @@ series: deep-dive-kirst-ashman-and-hull-2018
       <item>
         <title>{{ ep.title | xml_escape }}</title>
         <description>{{ ep.description | xml_escape }}</description>
+        <itunes:summary>{{ ep.description | xml_escape }}</itunes:summary>
+        <content:encoded><![CDATA[{{ ep.description | markdownify }}]]></content:encoded>
         {% if ep.audio_url %}
-          <enclosure url="{{ ep.audio_url }}" type="audio/mpeg" />
+          <enclosure url="{{ ep.audio_url }}" type="video/mp4"{% if ep.length %} length="{{ ep.length }}"{% endif %} />
         {% endif %}
         <pubDate>{{ ep.date | date_to_rfc822 }}</pubDate>
         <guid isPermaLink="true">{{ site.url }}{{ ep.url }}</guid>
         {% if ep.duration %}
           <itunes:duration>{{ ep.duration }}</itunes:duration>
+        {% endif %}
+        {% if ep.order %}
+          <itunes:episode>{{ ep.order }}</itunes:episode>
         {% endif %}
         {% if ep.image %}
           <itunes:image href="{{ site.url }}{{ ep.image }}" />
