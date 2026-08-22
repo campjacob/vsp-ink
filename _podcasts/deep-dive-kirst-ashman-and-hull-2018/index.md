@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Deep Dive: Kirst-Ashman and Hull (2018)"
-permalink: /deep-dive-kirst-ashman-and-hull-2018/
+permalink: /podcasts/deep-dive-kirst-ashman-and-hull-2018/
 series: "deep-dive-kirst-ashman-and-hull-2018"
 ---
 # Deep Dive: Kirst-Ashman and Hull (2018)

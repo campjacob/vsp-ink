@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% assign series_path = '/' | append: page.series | append: '/' %}
+{% assign series_path = '/podcasts/' | append: page.series | append: '/' %}
 {% assign series_page = site.podcasts | where: "permalink", series_path | first %}
 {% assign series_title = series_page.title | default: page.series %}
 

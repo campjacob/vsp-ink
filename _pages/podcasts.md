@@ -14,15 +14,20 @@ Collect unique series keys from all podcast items
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
 {% for s in all_series %}
-  {% assign eps = site.podcasts | where: "series", s %}
+  {% comment %} reading-support is the episode layout; index.md and feed.xml carry the same
+  series key but are not episodes, so filtering on it keeps them out of the count {% endcomment %}
+  {% assign eps = site.podcasts | where: "series", s | where: "layout", "reading-support" %}
+  {% assign index_path = '/podcasts/' | append: s | append: '/' %}
+  {% assign series_page = site.podcasts | where: "permalink", index_path | first %}
+  {% assign series_title = series_page.title | default: s %}
   {% assign first = eps | first %}
   {% assign cover = first.image | default: '/assets/media/' | append: s | append: '-cover-art.png' %}
-  {% assign index_path = '/' | append: s | append: '/' %}
+  {% assign count = eps | size %}
   <div style="border: 1px solid #ddd; border-radius: 8px; padding: 1rem; background: #fff;">
     <a href="{{ index_path | relative_url }}" style="text-decoration:none; color:inherit;">
-      <img src="{{ cover | relative_url }}" alt="{{ s }} cover" style="width:100%; border-radius:6px; margin-bottom:0.5rem;">
-      <h2 style="margin:0 0 0.5rem;">{{ first.series_title | default: first.series | replace: '-', ' ' | capitalize }}</h2>
-      <p style="font-size:0.9em; color:#555;">{{ eps | size }} episodes</p>
+      <img src="{{ cover | relative_url }}" alt="{{ series_title }} cover art" style="width:100%; border-radius:6px; margin-bottom:0.5rem;">
+      <h2 style="margin:0 0 0.5rem;">{{ series_title }}</h2>
+      <p style="font-size:0.9em; color:#555;">{{ count }} episode{% unless count == 1 %}s{% endunless %}</p>
     </a>
   </div>
 {% endfor %}

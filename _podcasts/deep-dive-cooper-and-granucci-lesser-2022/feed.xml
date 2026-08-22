@@ -12,7 +12,7 @@ series: deep-dive-cooper-and-granucci-lesser-2022
   <channel>
     <!-- Basic metadata -->
     <title>{{ site.title }} – Deep Dive: Cooper and Granucci Lesser (2022)</title>
-    <link>{{ site.url }}{{ '/deep-dive-cooper-and-granucci-lesser-2022/' }}</link>
+    <link>{{ site.url }}{{ '/podcasts/deep-dive-cooper-and-granucci-lesser-2022/' }}</link>
     <atom:link href="{{ site.url }}{{ page.url }}" rel="self" type="application/rss+xml"/>
     <description>{{ site.description | default: "Student reading podcast series generated via Google Notebook LM." }}</description>
     <language>en-us</language>
@@ -23,7 +23,7 @@ series: deep-dive-cooper-and-granucci-lesser-2022
     <image>
       <url>{{ site.url }}/assets/media/deep-dive-cooper-and-granucci-lesser-2022-cover-art.png</url>
       <title>{{ site.title }} – Deep Dive: Cooper and Granucci Lesser (2022)</title>
-      <link>{{ site.url }}{{ '/deep-dive-cooper-and-granucci-lesser-2022/' }}</link>
+      <link>{{ site.url }}{{ '/podcasts/deep-dive-cooper-and-granucci-lesser-2022/' }}</link>
     </image>
 
     <!-- Optional iTunes metadata -->

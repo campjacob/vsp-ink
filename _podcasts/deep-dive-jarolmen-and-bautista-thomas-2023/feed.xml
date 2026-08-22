@@ -12,7 +12,7 @@ series: deep-dive-jarolmen-and-bautista-thomas-2023
   <channel>
     <!-- Basic metadata -->
     <title>{{ site.title }} – Deep Dive: Jarolmen and Bautista-Thomas (2023)</title>
-    <link>{{ site.url }}{{ '/deep-dive-jarolmen-and-bautista-thomas-2023/' }}</link>
+    <link>{{ site.url }}{{ '/podcasts/deep-dive-jarolmen-and-bautista-thomas-2023/' }}</link>
     <atom:link href="{{ site.url }}{{ page.url }}" rel="self" type="application/rss+xml"/>
     <description>{{ site.description | default: "Student reading podcast series generated via Google Notebook LM." }}</description>
     <language>en-us</language>
@@ -23,7 +23,7 @@ series: deep-dive-jarolmen-and-bautista-thomas-2023
     <image>
       <url>{{ site.url }}/assets/media/deep-dive-jarolmen-and-bautista-thomas-2023-cover-art.png</url>
       <title>{{ site.title }} – Deep Dive: Jarolmen and Bautista-Thomas (2023)</title>
-      <link>{{ site.url }}{{ '/deep-dive-jarolmen-and-bautista-thomas-2023/' }}</link>
+      <link>{{ site.url }}{{ '/podcasts/deep-dive-jarolmen-and-bautista-thomas-2023/' }}</link>
     </image>
 
     <!-- Optional iTunes metadata -->

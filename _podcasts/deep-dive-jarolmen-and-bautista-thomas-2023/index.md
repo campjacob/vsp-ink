@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Deep Dive: Jarolmen and Bautista-Thomas (2023)"
-permalink: /deep-dive-jarolmen-and-bautista-thomas-2023/
+permalink: /podcasts/deep-dive-jarolmen-and-bautista-thomas-2023/
 series: "deep-dive-jarolmen-and-bautista-thomas-2023"
 ---
 # Deep Dive: Jarolmen and Bautista-Thomas (2023)

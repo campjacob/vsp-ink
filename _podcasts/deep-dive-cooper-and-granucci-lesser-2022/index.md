@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Deep Dive: Cooper and Granucci Lesser (2022)"
-permalink: /deep-dive-cooper-and-granucci-lesser-2022/
+permalink: /podcasts/deep-dive-cooper-and-granucci-lesser-2022/
 series: "deep-dive-cooper-and-granucci-lesser-2022"
 ---
 # Deep Dive: Cooper and Granucci Lesser (2022)

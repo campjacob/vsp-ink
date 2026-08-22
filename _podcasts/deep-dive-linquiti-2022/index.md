@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Deep Dive: Linquiti (2022)"
-permalink: /deep-dive-linquiti-2022/
+permalink: /podcasts/deep-dive-linquiti-2022/
 series: "deep-dive-linquiti-2022"
 ---
 # Deep Dive: Linquiti (2022)
