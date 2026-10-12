@@ -1,0 +1,26 @@
+---
+permalink: /embed/albums.json
+layout: null
+---
+{%- comment -%}
+  Every album embed in _embed/, for other sites to read. jacobrcampbell.com's stream importer
+  (scripts/import-stream.py, source "albums") uses it for the alt text and the embed link, since
+  Chevereto itself has no alt-text field. Keyed by the album's Chevereto code.
+{%- endcomment -%}
+{
+{%- for e in site.embed %}
+  {{ e.chevereto_id | append: "" | jsonify }}: {
+    "title": {{ e.title | jsonify }},
+    "description": {{ e.description | jsonify }},
+    "date": {{ e.date | date: "%Y-%m-%d" | jsonify }},
+    "style": {{ e.style | default: "" | jsonify }},
+    "embed_url": {{ e.url | absolute_url | jsonify }},
+    "album_url": {{ "https://photos.vsp.ink/album/" | append: e.chevereto_id | jsonify }},
+    "images": [
+    {%- for i in e.images %}
+      {"url": {{ i.img_url | jsonify }}, "url_md": {{ i.img_url_md | default: "" | jsonify }}, "poster": {{ i.img_poster | default: "" | jsonify }}, "alt": {{ i.img_alt | default: "" | jsonify }}, "active": {{ i.img_active | default: false | jsonify }}}{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+    ]
+  }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+}
